@@ -4,7 +4,7 @@ import ETHIcon from "../../../../assets/svg/ETH.svg";
 
 export const ItemCardV4: FC = () => {
   return (
-    <Box w="302px" rounded="10px">
+    <Box minW="302px" w="302px" rounded="10px">
       <Image
         src="/Art3.png"
         h="302px"

@@ -22,6 +22,7 @@ export const ItemCardV7 = () => {
         pb="30px"
         border="1px solid"
         borderColor="outline.light"
+        minW="302px"
         w="302px"
         h="472px"
         rounded="8px"

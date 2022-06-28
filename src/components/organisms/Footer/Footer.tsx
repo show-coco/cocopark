@@ -11,6 +11,7 @@ import {
   InputRightElement,
   Select,
   Text,
+  useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "components/atoms/Link/Link";
@@ -21,8 +22,15 @@ import FacebookIcon from "../../../assets/svg/FacebookColored.svg";
 import TwitterIcon from "../../../assets/svg/TwitterColored.svg";
 import GlobeIcon from "../../../assets/svg/Globe.svg";
 import MoonIcon from "../../../assets/svg/Moon.svg";
+import { laptopMediaQuery } from "config/chakra-ui";
 
 export const Footer: FC = () => {
+  const [isMobile] = useMediaQuery(laptopMediaQuery);
+
+  if (isMobile) {
+    return <Mobile />;
+  }
+
   return (
     <Box as="footer" bgColor="soft.light">
       <Flex px="80px" py="60px">
@@ -65,20 +73,7 @@ const FirstColumn: FC = () => {
           Follow us
         </Text>
 
-        <HStack>
-          <SNSIconLink
-            href="https://twitter.com"
-            icon={<Icon as={FacebookIcon} />}
-          />
-          <SNSIconLink
-            href="https://twitter.com"
-            icon={<Icon fill="#7289da" as={SiDiscord} />}
-          />
-          <SNSIconLink
-            href="https://twitter.com"
-            icon={<Icon as={TwitterIcon} />}
-          />
-        </HStack>
+        <SNSIcons />
       </Box>
     </Box>
   );
@@ -176,12 +171,67 @@ const Bottom: FC = () => {
   );
 };
 
+const Mobile: FC = () => {
+  return (
+    <Flex
+      as="footer"
+      bgColor="soft.light"
+      py="32px"
+      px="43px"
+      flexDir="column"
+      alignItems="center"
+      textAlign="center"
+    >
+      <Box>
+        <Text textStyle="text.14.bold" mb="9px">
+          Region
+        </Text>
+        <Text textStyle="text.12.medium" color="gray.primary" mb="18px">
+          The world’s first marketplace for collectibles and <br /> non-fungible
+          tokens NFTs
+        </Text>
+
+        <HStack justify="center" w="full">
+          <Select
+            variant="outline"
+            rounded="full"
+            w="158px"
+            fontSize="14px"
+            fontWeight="bold"
+            mr="6px"
+          >
+            <option>Currency - USD</option>
+          </Select>
+          <IconButton
+            aria-label="dark-light"
+            variant="outline"
+            rounded="full"
+            icon={<Icon as={MoonIcon} />}
+          />
+        </HStack>
+      </Box>
+
+      <Box mt="30px">
+        <Text textStyle="text.14.bold" mb="9px">
+          Follow us
+        </Text>
+        <SNSIcons />
+      </Box>
+    </Flex>
+  );
+};
+
 const FooterLink: FC<{ children: ReactNode; href: string }> = ({
   children,
   href,
 }) => {
   return (
-    <Link href={href} color="gray.primary" textStyle="button.14">
+    <Link
+      href={href}
+      color="gray.primary"
+      textStyle="button.14"
+      whiteSpace="nowrap"
+    >
       {children}
     </Link>
   );
@@ -199,5 +249,24 @@ const SNSIconLink: FC<{ icon: any; href: string }> = ({ icon, href }) => {
       target="_blank"
       icon={icon}
     />
+  );
+};
+
+const SNSIcons: FC = () => {
+  return (
+    <HStack>
+      <SNSIconLink
+        href="https://twitter.com"
+        icon={<Icon as={FacebookIcon} />}
+      />
+      <SNSIconLink
+        href="https://twitter.com"
+        icon={<Icon fill="#7289da" as={SiDiscord} />}
+      />
+      <SNSIconLink
+        href="https://twitter.com"
+        icon={<Icon as={TwitterIcon} />}
+      />
+    </HStack>
   );
 };

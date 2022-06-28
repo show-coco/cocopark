@@ -18,7 +18,7 @@ export const TopSellItem: FC<Props> = ({
   percentage,
 }) => {
   return (
-    <Flex alignItems="center" w="410px">
+    <Flex alignItems="center" minW="280px" w="full" maxW="410px">
       <Text textStyle="text.14.bold" mr="20px">
         {number}
       </Text>

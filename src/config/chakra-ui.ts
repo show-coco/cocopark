@@ -1,5 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
 
+export const mobileMediaQuery = "(max-width: 768px)";
+export const laptopMediaQuery = "(max-width: 1280px)";
+
+const breakpoints = {
+  mobile: "425px",
+  tablet: "768px",
+  laptop: "1280px",
+};
+
 const colors = {
   brand: {
     900: "#1a365d",
@@ -132,4 +141,4 @@ const textStyles = {
   },
 };
 
-export const theme = extendTheme({ colors, textStyles });
+export const theme = extendTheme({ colors, textStyles, breakpoints });

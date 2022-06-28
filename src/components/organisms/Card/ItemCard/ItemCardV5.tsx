@@ -3,7 +3,7 @@ import { FC } from "react";
 
 export const ItemCardV5: FC = () => {
   return (
-    <Box w="302px" rounded="10px">
+    <Box minW="302px" w="302px" rounded="10px">
       <Image
         src="/Art3.png"
         h="302px"

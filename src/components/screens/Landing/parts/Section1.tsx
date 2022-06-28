@@ -8,15 +8,23 @@ import {
   InputGroup,
   InputRightElement,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { FilledIconButton } from "components/atoms/Button/IconButton";
 import { GuestHeader } from "components/organisms/Header/GuestHeader";
+import { mobileMediaQuery } from "config/chakra-ui";
 
 export const Section1: FC = () => {
+  const [isMobile] = useMediaQuery(mobileMediaQuery);
+
+  if (isMobile) {
+    return <Mobile />;
+  }
+
   return (
     <Box
       bgImage="/Bitmap.png"
-      h="100vh"
+      minH="100vh"
       backgroundSize="cover"
       position="relative"
       overflow="hidden"
@@ -103,6 +111,69 @@ export const Section1: FC = () => {
               border="none"
               textStyle="button.16"
               placeholder="Search items, collections, and accounts"
+              px="34px"
+            />
+            <InputRightElement
+              display="flex"
+              alignItems="center"
+              h="100%"
+              pr="32px"
+            >
+              <FilledIconButton
+                aria-label="search"
+                colorScheme="purple"
+                size="lg"
+                icon={<SearchIcon />}
+              />
+            </InputRightElement>
+          </InputGroup>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+const Mobile: FC = () => {
+  return (
+    <Box
+      bgImage="/Bitmap.png"
+      minH="100vh"
+      backgroundSize="cover"
+      position="relative"
+      overflow="hidden"
+      mb="90px"
+    >
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        w="100%"
+        h="100%"
+        bg="linear-gradient(rgba(0,0,0,0),rgba(255,255,255,1))"
+      ></Box>
+
+      <Box position="relative">
+        <GuestHeader />
+
+        <Box mx="auto" px="30px" mt="105px" textAlign="center">
+          <Heading as="h1" fontSize="48px">
+            Discover, collect, and sell extraordinary NFTs
+          </Heading>
+          <Text textStyle="text.16.regular" mt="16px">
+            Our marketplace is the world's first <br /> and largest NFT market
+            for <br /> independent creators worldwide
+          </Text>
+
+          <InputGroup h="84px" w="full" mx="auto" mt="40px">
+            <Input
+              h="84px"
+              rounded="full"
+              bgColor="rgba(255,255,255,.7)"
+              mixBlendMode="normal"
+              boxShadow="sm"
+              border="none"
+              textStyle="button.16"
+              placeholder="Type to search"
               px="34px"
             />
             <InputRightElement
