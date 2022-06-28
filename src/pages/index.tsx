@@ -1,12 +1,8 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { LandingScreen } from "components/screens/Landing/LandingScreen";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return (
-    <Box>
-      <Heading>Hello</Heading>
-    </Box>
-  );
+  return <LandingScreen />;
 };
 
 export default Home;
