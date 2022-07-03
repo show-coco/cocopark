@@ -9,6 +9,9 @@ import {
   HStack,
   Icon,
   IconButton,
+  Input,
+  InputGroup,
+  InputLeftElement,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FilledButton } from "components/atoms/Button/Button";
@@ -23,6 +26,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { BsDroplet } from "react-icons/bs";
 import { FiActivity } from "react-icons/fi";
+import { ROUTES } from "constants/routes";
+import { Links } from "./parts/Links";
+import { SearchIcon } from "@chakra-ui/icons";
 
 export const GuestHeader: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -42,12 +48,47 @@ export const GuestHeader: FC = () => {
       <Logo w="40px" h="40px" />
 
       <Flex>
-        <HStack spacing="29px">
-          <NavLink href="/">Explore</NavLink>
-          <NavLink href="/">Stats</NavLink>
-          <NavLink href="/">Drops</NavLink>
-          <NavLink href="/">Activity</NavLink>
-        </HStack>
+        <Links />
+        <FilledButton ml="32px">Sign In</FilledButton>
+      </Flex>
+    </Flex>
+  );
+};
+
+export const GuestHeaderWithSearch: FC = () => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
+  if (isMobile) {
+    return <MobileHeader />;
+  }
+
+  return (
+    <Flex
+      as="header"
+      h="84px"
+      alignItems="center"
+      px="32px"
+      justify="space-between"
+      bgColor="white"
+      boxShadow="md"
+    >
+      <Flex flex="1 0 0" pr="60px">
+        <Logo w="40px" h="40px" mr="12px" />
+        <InputGroup flex="1 0 0">
+          <InputLeftElement>
+            <SearchIcon />
+          </InputLeftElement>
+          <Input
+            rounded="full"
+            variant="filled"
+            maxW="520px"
+            placeholder="Search items, collections, and accounts"
+          />
+        </InputGroup>
+      </Flex>
+
+      <Flex>
+        <Links />
         <FilledButton ml="32px">Sign In</FilledButton>
       </Flex>
     </Flex>

@@ -50,7 +50,7 @@ export const OutlineRestingButton = forwardRef<ButtonProps, "button">(
         borderColor="outline.light"
         rounded="full"
         px="30px"
-        _hover={{ bgColor: "rgba(0,0,0,.1)" }}
+        _hover={{ bgColor: "#CACACA" }}
         _active={{ color: "purple.primary" }}
         ref={ref}
         {...props}
