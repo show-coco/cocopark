@@ -35,6 +35,7 @@ const colors = {
   },
   soft: {
     light: "#F5F8F8",
+    primary: "#EBF0F0",
   },
 };
 

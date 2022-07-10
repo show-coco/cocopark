@@ -6,6 +6,7 @@ import { FC } from "react";
 import { FiClock } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
+import { FavoriteButton } from "components/atoms/Button/FavoriteButton";
 
 export const ItemCardV6: FC = () => {
   return (
@@ -20,15 +21,7 @@ export const ItemCardV6: FC = () => {
         10:40:57
       </OutlineRestingButton>
 
-      <OutlineRestingButton
-        px="20px"
-        leftIcon={<Icon w="18px" h="18px" as={AiOutlineHeart} />}
-        position="absolute"
-        right="12px"
-        top="12px"
-      >
-        99
-      </OutlineRestingButton>
+      <FavoriteButton position="absolute" right="12px" top="12px" />
 
       <Link href="#">
         <Box rounded="10px">
