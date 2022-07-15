@@ -16,34 +16,19 @@ import { CopyIconButton } from "components/atoms/Button/CopyButton";
 import { BigNumber } from "ethers";
 import { formatEther } from "ethers/lib/utils";
 import { ERC20_SYMBOL, NATIVE_TOKEN_ICONS, useERC20 } from "hooks/useERC20";
+import { useNativeToken } from "hooks/useNativeToken";
 import { FC, useEffect, useState } from "react";
 import { TokenAmount } from "types/domain";
 import { omitAddress } from "utils/address";
 import { TokenBalance } from "../TokenBalance/TokenBalance";
 
-type Props = Omit<DrawerProps, "children">;
+type Props = Omit<DrawerProps, "children"> & {
+  account: string;
+};
 
-export const WalletDrawer: FC<Props> = ({ ...props }) => {
-  const { account, library } = useWeb3React();
-  if (!account) return null;
-
+export const WalletDrawer: FC<Props> = ({ account, ...props }) => {
   const { data: weth } = useERC20(ERC20_SYMBOL.WETH, account);
-  const [ethBalance, setEthBalance] = useState<TokenAmount>();
-
-  const setBalance = async () => {
-    const _ethBalance: BigNumber = await library.getBalance(account);
-
-    setEthBalance({
-      hex: _ethBalance._hex,
-      formatted: parseFloat(formatEther(_ethBalance)).toPrecision(4),
-    });
-  };
-
-  useEffect(() => {
-    if (account) {
-      setBalance();
-    }
-  }, [account]);
+  const { data: eth } = useNativeToken(account);
 
   return (
     <Drawer placement="right" {...props}>
@@ -65,11 +50,11 @@ export const WalletDrawer: FC<Props> = ({ ...props }) => {
         </DrawerHeader>
         <DrawerBody>
           <VStack>
-            {ethBalance?.formatted && (
+            {eth?.formatted && (
               <TokenBalance
                 symbol="ETH"
                 chain="Ethereum"
-                amount={ethBalance?.formatted}
+                amount={eth?.formatted}
                 icon={NATIVE_TOKEN_ICONS["ETH"]}
               />
             )}

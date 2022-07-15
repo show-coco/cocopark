@@ -36,13 +36,10 @@ type Token = {
 export const useERC20 = (symbol: ERC20_SYMBOL, account: string) => {
   const { library, chainId } = useWeb3React();
   const [contract, setContract] = useState<ERC20>();
-  const { data, mutate } = useSWR(
-    [account, contract, "getBalance"],
-    (account) => {
-      if (!contract) return;
-      return fetch(account, contract);
-    }
-  );
+  const { data } = useSWR([account, contract, "getBalance"], (account) => {
+    if (!contract) return;
+    return fetch(account, contract);
+  });
 
   const fetch = useCallback(
     async (account: string, contract: ERC20): Promise<Token | undefined> => {

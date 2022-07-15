@@ -61,7 +61,7 @@ export const GuestHeader: FC = () => {
 
 export const HeaderWithSearch: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
-  const { active } = useWeb3React();
+  const { active, account } = useWeb3React();
   const walletDrawer = useDisclosure();
   const walletModal = useDisclosure();
 
@@ -74,7 +74,7 @@ export const HeaderWithSearch: FC = () => {
 
   return (
     <>
-      <WalletDrawer {...walletDrawer} />
+      {account && <WalletDrawer account={account} {...walletDrawer} />}
       <WalletModal {...walletModal} />
 
       <Flex
