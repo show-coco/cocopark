@@ -6,7 +6,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  HStack,
   Icon,
   IconButton,
   Input,
@@ -15,7 +14,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FilledButton } from "components/atoms/Button/Button";
-import { NavLink } from "components/atoms/Link/NavLink";
 import { Logo } from "components/atoms/Logo/Logo";
 import { FC } from "react";
 import { useMediaQuery } from "@chakra-ui/react";
@@ -26,9 +24,15 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { BsDroplet } from "react-icons/bs";
 import { FiActivity } from "react-icons/fi";
-import { ROUTES } from "constants/routes";
 import { Links } from "./parts/Links";
 import { SearchIcon } from "@chakra-ui/icons";
+import { useWeb3React } from "@web3-react/core";
+import { FilledRestingIconButton } from "components/atoms/Button/IconButton";
+import { WalletIcon } from "components/atoms/Icon/WalletIcon";
+import { WalletDrawer } from "../Drawer/WalletDrawer";
+import { WalletModal } from "../Modal/WalletModel/WalletModal";
+import { useEagerConnect } from "hooks/useEagerConnect";
+import { useInactiveListener } from "hooks/useInactiveListener";
 
 export const GuestHeader: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -55,43 +59,66 @@ export const GuestHeader: FC = () => {
   );
 };
 
-export const GuestHeaderWithSearch: FC = () => {
+export const HeaderWithSearch: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const { active } = useWeb3React();
+  const walletDrawer = useDisclosure();
+  const walletModal = useDisclosure();
+
+  const tried = useEagerConnect();
+  useInactiveListener(!tried);
 
   if (isMobile) {
     return <MobileHeader />;
   }
 
   return (
-    <Flex
-      as="header"
-      h="84px"
-      alignItems="center"
-      px="32px"
-      justify="space-between"
-      bgColor="white"
-      boxShadow="md"
-    >
-      <Flex flex="1 0 0" pr="60px">
-        <Logo w="40px" h="40px" mr="12px" />
-        <InputGroup flex="1 0 0">
-          <InputLeftElement>
-            <SearchIcon />
-          </InputLeftElement>
-          <Input
-            rounded="full"
-            variant="filled"
-            maxW="520px"
-            placeholder="Search items, collections, and accounts"
-          />
-        </InputGroup>
-      </Flex>
+    <>
+      <WalletDrawer {...walletDrawer} />
+      <WalletModal {...walletModal} />
 
-      <Flex>
-        <Links />
-        <FilledButton ml="32px">Sign In</FilledButton>
+      <Flex
+        as="header"
+        h="84px"
+        alignItems="center"
+        px="32px"
+        justify="space-between"
+        bgColor="white"
+        boxShadow="md"
+      >
+        <Flex flex="1 0 0" pr="60px">
+          <Logo w="40px" h="40px" mr="12px" />
+          <InputGroup flex="1 0 0">
+            <InputLeftElement>
+              <SearchIcon />
+            </InputLeftElement>
+            <Input
+              rounded="full"
+              variant="filled"
+              maxW="520px"
+              placeholder="Search items, collections, and accounts"
+            />
+          </InputGroup>
+        </Flex>
+
+        <Flex>
+          <Links />
+          {active ? (
+            <FilledRestingIconButton
+              borderRadius="full"
+              aria-label="wallet"
+              ml="12px"
+              icon={<WalletIcon w="18px" h="18px" />}
+              onClick={walletDrawer.onOpen}
+            />
+          ) : (
+            <FilledButton ml="32px" onClick={walletModal.onOpen}>
+              Connect Wallet
+            </FilledButton>
+          )}
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   );
 };
 

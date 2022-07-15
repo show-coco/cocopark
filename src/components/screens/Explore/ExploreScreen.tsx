@@ -15,7 +15,7 @@ import {
 import { Tab } from "components/atoms/Tab/Tab";
 import { ItemCardV6 } from "components/organisms/Card/ItemCard/ItemCardV6";
 import { Footer } from "components/organisms/Footer/Footer";
-import { GuestHeaderWithSearch } from "components/organisms/Header/GuestHeader";
+import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { FC } from "react";
 import { BsFilter } from "react-icons/bs";
 import { TbArrowsSort } from "react-icons/tb";
@@ -23,7 +23,7 @@ import { TbArrowsSort } from "react-icons/tb";
 export const ExploreScreen: FC = () => {
   return (
     <Box>
-      <GuestHeaderWithSearch />
+      <HeaderWithSearch />
 
       <Box px="80px" pt="40px">
         <Heading as="h1" textStyle="h1">

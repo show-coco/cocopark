@@ -1,18 +1,23 @@
 import { Box, Flex, HStack, Icon, Image, Text } from "@chakra-ui/react";
 import { OutlineRestingButton } from "components/atoms/Button/Button";
 import { Footer } from "components/organisms/Footer/Footer";
-import { GuestHeader } from "components/organisms/Header/GuestHeader";
+import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { FC } from "react";
 import ETHIcon from "../../../assets/svg/ETH.svg";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { omitAddress } from "utils/address";
 import { FavoriteButton } from "components/atoms/Button/FavoriteButton";
+import { useEagerConnect } from "hooks/useEagerConnect";
+import { useInactiveListener } from "hooks/useInactiveListener";
+import { CopyIcon } from "@chakra-ui/icons";
 
 export const AssetDetailScreen: FC = () => {
+  const triedEager = useEagerConnect();
+  useInactiveListener(!triedEager);
+
   return (
     <Box>
-      <GuestHeader />
-
+      <HeaderWithSearch />
       <Flex px="80px" py="40px">
         <Box>
           <Image src="/Art0.png" w="628px" h="628px" rounded="lg" />
@@ -44,7 +49,7 @@ export const AssetDetailScreen: FC = () => {
                 mt="22px"
                 py="12px"
                 alignItems="center"
-                leftIcon={<Icon as={MdOutlineContentCopy} />}
+                leftIcon={<CopyIcon />}
               >
                 {omitAddress("0x162E71fdD2dvrnauornainvr0eB3a9Ec")}
               </OutlineRestingButton>
