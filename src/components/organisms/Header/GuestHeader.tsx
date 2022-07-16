@@ -33,6 +33,7 @@ import { WalletDrawer } from "../Drawer/WalletDrawer";
 import { WalletModal } from "../Modal/WalletModel/WalletModal";
 import { useEagerConnect } from "hooks/useEagerConnect";
 import { useInactiveListener } from "hooks/useInactiveListener";
+import { SearchInput } from "components/atoms/Input/SearchInput";
 
 export const GuestHeader: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -88,17 +89,7 @@ export const HeaderWithSearch: FC = () => {
       >
         <Flex flex="1 0 0" pr="60px">
           <Logo w="40px" h="40px" mr="12px" />
-          <InputGroup flex="1 0 0">
-            <InputLeftElement>
-              <SearchIcon />
-            </InputLeftElement>
-            <Input
-              rounded="full"
-              variant="filled"
-              maxW="520px"
-              placeholder="Search items, collections, and accounts"
-            />
-          </InputGroup>
+          <SearchInput placeholder="Search items, collections, and accounts" />
         </Flex>
 
         <Flex>

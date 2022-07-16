@@ -22,7 +22,7 @@ export const ItemCardV6: FC = () => {
 
       <FavoriteButton position="absolute" right="12px" top="12px" />
 
-      <Link href="#">
+      <Link href="/assets/sample/1">
         <Box rounded="10px">
           <Image
             src="/Art1.png"
@@ -58,7 +58,11 @@ export const ItemCardV6: FC = () => {
                 Author
               </Text>
 
-              <AvatarAndName name="Ropital" icon="/Art0.png" />
+              <AvatarAndName
+                href="/users/sample"
+                name="Ropital"
+                icon="/Art0.png"
+              />
             </HStack>
           </Box>
         </Box>

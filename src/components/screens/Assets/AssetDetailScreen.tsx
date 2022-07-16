@@ -41,7 +41,12 @@ export const AssetDetailScreen: FC = () => {
 
         <Box mt="26px" w="50%">
           <HStack justify="space-between">
-            <AvatarAndName icon="/Art0.png" name="Trending Arts" size="lg" />
+            <AvatarAndName
+              href="/collections/1"
+              icon="/Art0.png"
+              name="Trending Arts"
+              size="lg"
+            />
 
             <HStack>
               <FavoriteButton />
@@ -70,6 +75,7 @@ export const AssetDetailScreen: FC = () => {
                 icon="/Art0.png"
                 name={omitAddress("0x9853D4659A2C57127E1Fa8F48C345b15966345CF")}
                 size="lg"
+                href="/users/1"
               />
             </Box>
 
@@ -81,6 +87,7 @@ export const AssetDetailScreen: FC = () => {
                 icon="/Art0.png"
                 name={omitAddress("0x9853D4659A2C57127E1Fa8F48C345b15966345CF")}
                 size="lg"
+                href="/users/1"
               />
             </Box>
           </HStack>

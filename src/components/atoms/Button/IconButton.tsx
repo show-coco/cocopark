@@ -15,6 +15,14 @@ export const FilledIconButton = forwardRef<IconButtonProps, "button">(
 
 export const FilledRestingIconButton = forwardRef<IconButtonProps, "button">(
   (props, ref) => {
-    return <IconButton rounded="full" variant="outline" ref={ref} {...props} />;
+    return (
+      <IconButton
+        bgColor="white"
+        rounded="full"
+        variant="outline"
+        ref={ref}
+        {...props}
+      />
+    );
   }
 );
