@@ -4,7 +4,7 @@ import ETHIcon from "../../../assets/svg/ETH.svg";
 
 export const Price: FC = () => {
   return (
-    <HStack mt="16px" spacing="6px" justify="center">
+    <HStack spacing="6px" justify="center">
       <Icon h="22px" w="22px">
         <ETHIcon />
       </Icon>

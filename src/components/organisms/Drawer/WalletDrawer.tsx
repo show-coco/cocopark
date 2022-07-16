@@ -11,14 +11,10 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useWeb3React } from "@web3-react/core";
 import { CopyIconButton } from "components/atoms/Button/CopyButton";
-import { BigNumber } from "ethers";
-import { formatEther } from "ethers/lib/utils";
 import { ERC20_SYMBOL, NATIVE_TOKEN_ICONS, useERC20 } from "hooks/useERC20";
 import { useNativeToken } from "hooks/useNativeToken";
-import { FC, useEffect, useState } from "react";
-import { TokenAmount } from "types/domain";
+import { FC } from "react";
 import { omitAddress } from "utils/address";
 import { TokenBalance } from "../TokenBalance/TokenBalance";
 

@@ -7,8 +7,25 @@ export const SoftTag: FC<TagProps> = (props) => {
       bgColor="purple.resting"
       color="purple.primary"
       px="32px"
-      h="32px"
+      h="36px"
       rounded="full"
+      whiteSpace="nowrap"
+    >
+      <Text textStyle="text.12.bold">{props.children}</Text>
+    </Tag>
+  );
+};
+
+export const LightTag: FC<TagProps> = (props) => {
+  return (
+    <Tag
+      px="32px"
+      h="36px"
+      rounded="full"
+      border="1px solid"
+      borderColor="outline.light"
+      bgColor="white"
+      whiteSpace="nowrap"
     >
       <Text textStyle="text.12.bold">{props.children}</Text>
     </Tag>

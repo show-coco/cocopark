@@ -1,10 +1,9 @@
 import { Box, Divider, HStack, Icon, Image, Text } from "@chakra-ui/react";
 import { OutlineRestingButton } from "components/atoms/Button/Button";
 import { Price } from "components/molecules/Price/Price";
-import { User } from "components/molecules/User/User";
+import { AvatarAndName } from "components/molecules/AvatarAndName/AvatarAndName";
 import { FC } from "react";
 import { FiClock } from "react-icons/fi";
-import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 import { FavoriteButton } from "components/atoms/Button/FavoriteButton";
 
@@ -26,7 +25,7 @@ export const ItemCardV6: FC = () => {
       <Link href="#">
         <Box rounded="10px">
           <Image
-            src="/Art3.png"
+            src="/Art1.png"
             h="302px"
             w="302px"
             objectFit="cover"
@@ -59,7 +58,7 @@ export const ItemCardV6: FC = () => {
                 Author
               </Text>
 
-              <User />
+              <AvatarAndName name="Ropital" icon="/Art0.png" />
             </HStack>
           </Box>
         </Box>
