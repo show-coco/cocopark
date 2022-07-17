@@ -98,7 +98,7 @@ export const HeaderWithSearch: FC = () => {
             <FilledRestingIconButton
               borderRadius="full"
               aria-label="wallet"
-              ml="12px"
+              ml="32px"
               icon={<WalletIcon w="18px" h="18px" />}
               onClick={walletDrawer.onOpen}
             />

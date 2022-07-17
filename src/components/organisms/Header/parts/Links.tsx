@@ -7,9 +7,9 @@ export const Links: FC = () => {
   return (
     <HStack spacing="29px">
       <NavLink href={ROUTES.explore}>Explore</NavLink>
-      <NavLink href="/">Stats</NavLink>
+      {/* <NavLink href="/">Stats</NavLink> */}
       <NavLink href="/drops">Drops</NavLink>
-      <NavLink href="/">Activity</NavLink>
+      {/* <NavLink href="/">Activity</NavLink> */}
     </HStack>
   );
 };
