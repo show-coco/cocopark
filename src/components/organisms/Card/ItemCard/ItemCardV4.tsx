@@ -9,6 +9,7 @@ export const ItemCardV4: FC = () => {
         src="/Art3.png"
         h="302px"
         w="302px"
+        alt="thumbnail"
         objectFit="cover"
         roundedTop="10px"
       />

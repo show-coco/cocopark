@@ -30,6 +30,7 @@ export const ItemCardV6: FC = () => {
             w="302px"
             objectFit="cover"
             roundedTop="10px"
+            alt="thumbnail"
           />
           <Box
             border="1px solid"

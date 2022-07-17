@@ -20,7 +20,12 @@ export const AssetDetailScreen: FC = () => {
       <HeaderWithSearch />
       <Flex px="60px" py="40px">
         <Box mr="24px" w="50%">
-          <Image src="/Art1.png" rounded="lg" __css={{ aspectRatio: "1/1" }} />
+          <Image
+            src="/Art1.png"
+            alt="background"
+            rounded="lg"
+            __css={{ aspectRatio: "1/1" }}
+          />
           <Box mt="24px">
             <OffersTable />
           </Box>

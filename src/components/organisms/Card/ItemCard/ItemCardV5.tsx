@@ -9,6 +9,7 @@ export const ItemCardV5: FC = () => {
         h="302px"
         w="302px"
         objectFit="cover"
+        alt="thumbnail"
         roundedTop="10px"
       />
       <Box

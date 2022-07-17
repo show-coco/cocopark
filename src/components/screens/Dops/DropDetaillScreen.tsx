@@ -93,7 +93,12 @@ export const DropDetailScreen: FC = () => {
           </Box>
 
           <Box w="50%">
-            <Image src="/Bg.png" rounded="lg" __css={{ aspectRatio: "1/1" }} />
+            <Image
+              src="/Bg.png"
+              alt="background"
+              rounded="lg"
+              __css={{ aspectRatio: "1/1" }}
+            />
           </Box>
         </Flex>
 
@@ -111,7 +116,7 @@ export const DropDetailScreen: FC = () => {
               festivals in the world, with more than 400,000 attendees to its
               annual summer festival, topping 600,000 in 2022, and tickets
               always selling out in minutes. Tomorrowland has been voted the
-              World's Best Music Event five times at the International Dance
+              Worlds Best Music Event five times at the International Dance
               Music awards, and has been officially recognized by the UN as a
               symbol of global unity and community by Secretary General Ban
               Ki-Moon. The Tomorrowland Belgium 2022 collection, The Reflection
@@ -120,31 +125,32 @@ export const DropDetailScreen: FC = () => {
               giveaways of Tomorrowland fashion, events, experiences, backstage
               tours, and more, through holders-only community channels. These
               giveaways occur year-round. Holders attending Tomorrowland Belgium
-              2022 may also access an exclusive holder’s only stage, with secret
-              shows from massive artists. The Reflection of Love Collection is
-              part of a series of three collections this year, along with a
-              collection released at Tomorrowland Winter (A Letter from the
-              Universe), and a collection dropping in the Fall. Own one NFT from
-              each of these three collections to assemble the Medallion of
-              Memoria; the ultimate Tomorrowland fan experience. The Medallion
-              of Memoria grants perpetual access to exclusive giveaways and
-              secret shows at Tomorrowland events. Furthermore, holders get
-              guaranteed access to tickets for future Tomorrowland events,
-              forever. Never worry about securing tickets, ever again. With
-              events selling out in minutes, this utility has never been offered
-              by Tomorrowland before. Finally, holders have the option to burn
-              their Medallion in exchange for a full weekend ticket to the next
-              Tomorrowland. A full breakdown of the NFT utility and art is
-              available at nft.tomorrowland.com. From a completely custom made
-              social media network made in 2015, to becoming the first cashless
-              music festival, to developing online metaversal music festivals
-              during covid with over one million concurrent viewers,
-              Tomorrowland’s focus has always been on crafting the greatest fan
+              2022 may also access an exclusive holder\’s only stage, with
+              secret shows from massive artists. The Reflection of Love
+              Collection is part of a series of three collections this year,
+              along with a collection released at Tomorrowland Winter (A Letter
+              from the Universe), and a collection dropping in the Fall. Own one
+              NFT from each of these three collections to assemble the Medallion
+              of Memoria; the ultimate Tomorrowland fan experience. The
+              Medallion of Memoria grants perpetual access to exclusive
+              giveaways and secret shows at Tomorrowland events. Furthermore,
+              holders get guaranteed access to tickets for future Tomorrowland
+              events, forever. Never worry about securing tickets, ever again.
+              With events selling out in minutes, this utility has never been
+              offered by Tomorrowland before. Finally, holders have the option
+              to burn their Medallion in exchange for a full weekend ticket to
+              the next Tomorrowland. A full breakdown of the NFT utility and art
+              is available at nft.tomorrowland.com. From a completely custom
+              made social media network made in 2015, to becoming the first
+              cashless music festival, to developing online metaversal music
+              festivals during covid with over one million concurrent viewers,
+              Tomorrowland\’s focus has always been on crafting the greatest fan
               experiences and communities through new technologies. The NFT
               collections and Medallion of Memoria are the ultimate expression
               of this commitment and the first steps on a journey into web3 by
-              one of the world’s biggest music festivals. Gather the Collection.
-              Assemble the Medallion. Unite Forever, at Tomorrowland.
+              one of the world\’s biggest music festivals. Gather the
+              Collection. Assemble the Medallion. Unite Forever, at
+              Tomorrowland.
             </Text>
           </Box>
 

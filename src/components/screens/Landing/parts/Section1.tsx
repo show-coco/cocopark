@@ -97,7 +97,7 @@ export const Section1: FC = () => {
             Discover, collect, and sell extraordinary NFTs
           </Heading>
           <Text textStyle="text.16.regular" mt="16px">
-            Our marketplace is the world's first and largest NFT market <br />
+            Our marketplace is the worlds first and largest NFT market <br />
             for independent creators worldwide
           </Text>
 
@@ -160,7 +160,7 @@ const Mobile: FC = () => {
             Discover, collect, and sell extraordinary NFTs
           </Heading>
           <Text textStyle="text.16.regular" mt="16px">
-            Our marketplace is the world's first <br /> and largest NFT market
+            Our marketplace is the worlds first <br /> and largest NFT market
             for <br /> independent creators worldwide
           </Text>
 

@@ -34,6 +34,7 @@ export const BarRangeSlider: FC<Props> = ({ dataSet, min, max }) => {
           const value = (i + 1) * step;
           return (
             <Bar
+              key={data + i}
               isActive={value >= start && value <= end}
               height={(data / highest) * 100}
             />

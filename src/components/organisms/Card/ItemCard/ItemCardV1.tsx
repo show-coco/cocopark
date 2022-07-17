@@ -28,6 +28,7 @@ export const ItemCardV1: FC<Props> = ({ href }) => {
           w="254px"
           objectFit="cover"
           rounded="md"
+          alt="thumbnail"
           __css={{ aspectRatio: "1/1" }}
         />
         <Box mt="15px">

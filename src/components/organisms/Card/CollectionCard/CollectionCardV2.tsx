@@ -17,12 +17,25 @@ export const CollectionCardV2: FC = () => {
           src="/Art3.png"
           w="241px"
           h="208px"
+          alt="thumbnail"
           rounded="12px"
           objectFit="cover"
         />
         <VStack spacing="12px">
-          <Image src="/Art4.png" w="109px" h="98px" rounded="12px" />
-          <Image src="/Art5.png" w="109px" h="98px" rounded="12px" />
+          <Image
+            src="/Art4.png"
+            alt="thumbnail"
+            w="109px"
+            h="98px"
+            rounded="12px"
+          />
+          <Image
+            src="/Art5.png"
+            alt="thumbnail"
+            w="109px"
+            h="98px"
+            rounded="12px"
+          />
         </VStack>
       </HStack>
 

@@ -36,9 +36,9 @@ const Icons: { [connectorName in ConnectorNames]: any } = {
 };
 
 export const WalletModal: FC<Props> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
   const { activate, connector } = useWeb3React();
+
+  if (!isOpen) return null;
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -54,6 +54,7 @@ export const WalletModal: FC<Props> = ({ isOpen, onClose }) => {
 
               return (
                 <OutlineRestingButton
+                  key={name}
                   w="full"
                   py="24px"
                   justifyContent="space-between"

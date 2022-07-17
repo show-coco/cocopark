@@ -43,7 +43,7 @@ export const ItemCardV7 = () => {
           </Flex>
         </Flex>
 
-        <Image src="/Art1.png" rounded="10px" mb="16px" />
+        <Image src="/Art1.png" alt="thumbnail" rounded="10px" mb="16px" />
 
         <Box textAlign="left">
           <Text textStyle="h6" mb="7px">
