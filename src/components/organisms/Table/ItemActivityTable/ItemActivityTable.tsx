@@ -9,6 +9,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { Price } from "components/molecules/Price/Price";
 import { FC } from "react";
 
 export const ItemActivityTable: FC = () => {
@@ -43,8 +44,10 @@ export const ItemActivityTable: FC = () => {
               <Td>31 Dec 2021</Td>
             </Tr>
             <Tr>
-              <Td>Transfer</Td>
-              <Td></Td>
+              <Td>Sale</Td>
+              <Td>
+                <Price />
+              </Td>
               <Td>nftinitcom</Td>
               <Td>nonkosi.joyi</Td>
               <Td>31 Dec 2021</Td>

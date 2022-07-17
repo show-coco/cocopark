@@ -9,7 +9,7 @@ type Props = {
   href: string;
 };
 
-export const AvatarAndName: FC<Props> = ({ icon, name, href, size = "md" }) => {
+export const AvatarName: FC<Props> = ({ icon, name, href, size = "md" }) => {
   switch (size) {
     case "lg":
       return (

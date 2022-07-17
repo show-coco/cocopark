@@ -10,6 +10,23 @@ export const SoftTag: FC<TagProps> = (props) => {
       h="36px"
       rounded="full"
       whiteSpace="nowrap"
+      {...props}
+    >
+      <Text textStyle="text.12.bold">{props.children}</Text>
+    </Tag>
+  );
+};
+
+export const FilledTag: FC<TagProps> = (props) => {
+  return (
+    <Tag
+      bgColor="purple.primary"
+      color="white"
+      px="32px"
+      h="36px"
+      rounded="full"
+      whiteSpace="nowrap"
+      {...props}
     >
       <Text textStyle="text.12.bold">{props.children}</Text>
     </Tag>
@@ -26,6 +43,7 @@ export const LightTag: FC<TagProps> = (props) => {
       borderColor="outline.light"
       bgColor="white"
       whiteSpace="nowrap"
+      {...props}
     >
       <Text textStyle="text.12.bold">{props.children}</Text>
     </Tag>

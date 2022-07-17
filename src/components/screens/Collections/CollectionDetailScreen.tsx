@@ -28,6 +28,7 @@ import { ItemCardV6 } from "components/organisms/Card/ItemCard/ItemCardV6";
 import { Footer } from "components/organisms/Footer/Footer";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { PropertyItem } from "components/organisms/Item/PropertyItem/PropertyItem";
+import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLInks";
 import { FC } from "react";
 
 export const CollectionDetailScreen: FC = () => {
@@ -48,7 +49,10 @@ export const CollectionDetailScreen: FC = () => {
             even the most intricate details are steeped in historical
             significance.
           </Text>
-          <SNSLinks />
+
+          <Flex mt="22px" justify="center">
+            <SNSLinks />
+          </Flex>
         </Box>
 
         <AnalyticsCards />
@@ -136,33 +140,6 @@ const PriceAccordionItem: FC = () => {
         max={200}
       />
     </OutlineAccordionItem>
-  );
-};
-
-const SNSLinks: FC = () => {
-  return (
-    <HStack mt="22px" justify="center">
-      <FilledRestingIconButton
-        aria-label="twitter"
-        size="lg"
-        icon={<TwitterIcon />}
-      />
-      <FilledRestingIconButton
-        aria-label="discord"
-        size="lg"
-        icon={<DiscordIcon />}
-      />
-      <FilledRestingIconButton
-        aria-label="facebook"
-        size="lg"
-        icon={<FacebookIcon />}
-      />
-      <FilledRestingIconButton
-        aria-label="public"
-        size="lg"
-        icon={<PublicIcon />}
-      />
-    </HStack>
   );
 };
 

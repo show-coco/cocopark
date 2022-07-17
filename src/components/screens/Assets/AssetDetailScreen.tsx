@@ -1,24 +1,10 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  Image,
-  Text,
-} from "@chakra-ui/react";
-import {
-  FilledButton,
-  FilledRestingButton,
-} from "components/atoms/Button/Button";
+import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { Footer } from "components/organisms/Footer/Footer";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { FC } from "react";
-import ETHIcon from "../../../assets/svg/ETH.svg";
 import { omitAddress } from "utils/address";
 import { FavoriteButton } from "components/atoms/Button/FavoriteButton";
-import { TimerIcon } from "components/atoms/Icon/Timer";
-import { AvatarAndName } from "components/molecules/AvatarAndName/AvatarAndName";
+import { AvatarName } from "components/molecules/AvatarName/AvatarName";
 import { FilledRestingIconButton } from "components/atoms/Button/IconButton";
 import { DotsIcon } from "components/atoms/Icon/DotsIcon";
 import { LightTag } from "components/atoms/Tag/Tag";
@@ -26,6 +12,7 @@ import { OffersTable } from "components/organisms/Table/OffersTable/OffertsTable
 import { PriceHistory } from "components/organisms/Chart/PriceHistory/PriceHistory";
 import { ItemActivityTable } from "components/organisms/Table/ItemActivityTable/ItemActivityTable";
 import { ItemCardV6 } from "components/organisms/Card/ItemCard/ItemCardV6";
+import { BuyActionCard } from "components/organisms/Card/ActionCard/ActionCard";
 
 export const AssetDetailScreen: FC = () => {
   return (
@@ -33,7 +20,7 @@ export const AssetDetailScreen: FC = () => {
       <HeaderWithSearch />
       <Flex px="60px" py="40px">
         <Box mr="24px" w="50%">
-          <Image src="/Art1.png" rounded="lg" />
+          <Image src="/Art1.png" rounded="lg" __css={{ aspectRatio: "1/1" }} />
           <Box mt="24px">
             <OffersTable />
           </Box>
@@ -41,7 +28,7 @@ export const AssetDetailScreen: FC = () => {
 
         <Box mt="26px" w="50%">
           <HStack justify="space-between">
-            <AvatarAndName
+            <AvatarName
               href="/collections/1"
               icon="/Art0.png"
               name="Trending Arts"
@@ -71,7 +58,7 @@ export const AssetDetailScreen: FC = () => {
               <Text textStyle="text.12.medium" mb="10px">
                 Owner
               </Text>
-              <AvatarAndName
+              <AvatarName
                 icon="/Art0.png"
                 name={omitAddress("0x9853D4659A2C57127E1Fa8F48C345b15966345CF")}
                 size="lg"
@@ -83,7 +70,7 @@ export const AssetDetailScreen: FC = () => {
               <Text textStyle="text.12.medium" mb="10px">
                 Creator
               </Text>
-              <AvatarAndName
+              <AvatarName
                 icon="/Art0.png"
                 name={omitAddress("0x9853D4659A2C57127E1Fa8F48C345b15966345CF")}
                 size="lg"
@@ -106,7 +93,7 @@ export const AssetDetailScreen: FC = () => {
           </Box>
 
           <Box mb="24px">
-            <ActionCard />
+            <BuyActionCard />
           </Box>
 
           <PriceHistory />
@@ -132,82 +119,5 @@ export const AssetDetailScreen: FC = () => {
 
       <Footer />
     </Box>
-  );
-};
-
-const ActionCard: FC = () => {
-  return (
-    <Flex mt="12px" boxShadow="lg" p="20px 24px" rounded="lg">
-      <Box mr="12px">
-        <Box h="70px">
-          <Text textStyle="text.12.medium" color="gray.primary">
-            Top bid
-          </Text>
-
-          <HStack mt="9px">
-            <Box
-              display="inline-flex"
-              rounded="full"
-              bgColor="soft.primary"
-              justifyContent="center"
-              alignItems="center"
-              p="10px"
-            >
-              <Icon h="16px" w="16px" as={ETHIcon} />
-            </Box>
-
-            <Text textStyle="h6">2.87 ETH ($9.1k USD)</Text>
-          </HStack>
-        </Box>
-
-        <FilledButton w="284px" mt="27px" py="12px">
-          Place your bid
-        </FilledButton>
-      </Box>
-
-      <Box flex="1 0 0">
-        <Box h="70px">
-          <Text textStyle="text.12.medium" color="gray.primary">
-            Sale ends in
-          </Text>
-
-          <HStack mt="9px">
-            <Box
-              display="inline-flex"
-              rounded="full"
-              bgColor="soft.primary"
-              justifyContent="center"
-              alignItems="center"
-              p="10px"
-            >
-              <TimerIcon h="20px" w="20px" />
-            </Box>
-
-            <Flex align="center">
-              <Text textStyle="h6">3</Text>
-              <Text textStyle="text.16.regular" mr="4px">
-                d
-              </Text>
-              <Text textStyle="h6">: 10</Text>
-              <Text textStyle="text.16.regular" mr="4px">
-                h
-              </Text>
-              <Text textStyle="h6">: 40</Text>
-              <Text textStyle="text.16.regular" mr="4px">
-                m
-              </Text>
-              <Text textStyle="h6">: 37</Text>
-              <Text textStyle="text.16.regular" mr="4px">
-                s
-              </Text>
-            </Flex>
-          </HStack>
-        </Box>
-
-        <FilledRestingButton w="284px" mt="27px">
-          Buy now
-        </FilledRestingButton>
-      </Box>
-    </Flex>
   );
 };
