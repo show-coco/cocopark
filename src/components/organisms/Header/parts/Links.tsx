@@ -8,7 +8,7 @@ export const Links: FC = () => {
     <HStack spacing="29px">
       <NavLink href={ROUTES.explore}>Explore</NavLink>
       <NavLink href="/">Stats</NavLink>
-      <NavLink href="/">Drops</NavLink>
+      <NavLink href="/drops">Drops</NavLink>
       <NavLink href="/">Activity</NavLink>
     </HStack>
   );

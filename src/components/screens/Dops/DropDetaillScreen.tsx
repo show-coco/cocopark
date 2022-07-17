@@ -15,12 +15,9 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 import { FilledButton } from "components/atoms/Button/Button";
-import { FilledTag, LightTag } from "components/atoms/Tag/Tag";
+import { FilledTag } from "components/atoms/Tag/Tag";
 import { AvatarNameId } from "components/molecules/AvatarName/AvatarNameId";
-import {
-  BuyActionCard,
-  DropActionCard,
-} from "components/organisms/Card/ActionCard/ActionCard";
+import { DropActionCard } from "components/organisms/Card/ActionCard/ActionCard";
 import { Footer } from "components/organisms/Footer/Footer";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLInks";
