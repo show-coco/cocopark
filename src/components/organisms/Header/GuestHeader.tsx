@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -6,6 +7,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
+  HStack,
   Icon,
   IconButton,
   Input,
@@ -34,6 +36,7 @@ import { WalletModal } from "../Modal/WalletModel/WalletModal";
 import { useEagerConnect } from "hooks/useEagerConnect";
 import { useInactiveListener } from "hooks/useInactiveListener";
 import { SearchInput } from "components/atoms/Input/SearchInput";
+import Link from "next/link";
 
 export const GuestHeader: FC = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -88,20 +91,36 @@ export const HeaderWithSearch: FC = () => {
         boxShadow="md"
       >
         <Flex flex="1 0 0" pr="60px">
-          <Logo w="40px" h="40px" mr="12px" />
+          <Link href="/">
+            <Logo w="40px" h="40px" mr="12px" cursor="pointer" />
+          </Link>
           <SearchInput placeholder="Search items, collections, and accounts" />
         </Flex>
 
         <Flex>
           <Links />
           {active ? (
-            <FilledRestingIconButton
-              borderRadius="full"
-              aria-label="wallet"
-              ml="32px"
-              icon={<WalletIcon w="18px" h="18px" />}
-              onClick={walletDrawer.onOpen}
-            />
+            <HStack ml="32px" spacing="8px">
+              <FilledButton>Create</FilledButton>
+              <Link href="/manager/dashboard">
+                <a>
+                  <Avatar
+                    src="/Art1.png"
+                    size="sm"
+                    h="40px"
+                    w="40px"
+                    cursor="pointer"
+                  />
+                </a>
+              </Link>
+              <FilledRestingIconButton
+                borderRadius="full"
+                aria-label="wallet"
+                ml="32px"
+                icon={<WalletIcon w="18px" h="18px" />}
+                onClick={walletDrawer.onOpen}
+              />
+            </HStack>
           ) : (
             <FilledButton ml="32px" onClick={walletModal.onOpen}>
               Connect Wallet
