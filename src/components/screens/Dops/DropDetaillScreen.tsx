@@ -20,7 +20,7 @@ import { AvatarNameId } from "components/molecules/AvatarName/AvatarNameId";
 import { DropActionCard } from "components/organisms/Card/ActionCard/ActionCard";
 import { Footer } from "components/organisms/Footer/Footer";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
-import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLInks";
+import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLinks";
 import { FC } from "react";
 
 export const DropDetailScreen: FC = () => {

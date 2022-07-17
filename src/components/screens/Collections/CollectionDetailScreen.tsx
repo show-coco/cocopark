@@ -28,7 +28,7 @@ import { ItemCardV6 } from "components/organisms/Card/ItemCard/ItemCardV6";
 import { Footer } from "components/organisms/Footer/Footer";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { PropertyItem } from "components/organisms/Item/PropertyItem/PropertyItem";
-import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLInks";
+import { SNSLinks } from "components/organisms/Links/SNSLinks/SNSLinks";
 import { FC } from "react";
 
 export const CollectionDetailScreen: FC = () => {
