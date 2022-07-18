@@ -37,6 +37,9 @@ const colors = {
     light: "#F5F8F8",
     primary: "#EBF0F0",
   },
+  yellow: {
+    primary: "#F4C952",
+  },
 };
 
 const textStyles = {

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { HeaderWithSearch } from "components/organisms/Header/GuestHeader";
 import { Sidebar } from "components/organisms/Sidebar/Sidebar";
 import { FC, ReactNode } from "react";
@@ -14,7 +14,7 @@ export const SidebarTemplate: FC<Props> = ({ children }) => {
       <Flex>
         <Sidebar />
 
-        <Box pt="40px" px="80px">
+        <Box py="40px" px="80px">
           {children}
         </Box>
       </Flex>
