@@ -40,7 +40,7 @@ export const TopSellItem: FC<Props> = ({
             </Text>
           </Flex>
 
-          <Text textStyle="text.14.regular" color={"green"}>
+          <Text textStyle="text.14.regular" color="green.primary">
             +
             {percentage.toLocaleString(undefined, {
               minimumFractionDigits: 2,

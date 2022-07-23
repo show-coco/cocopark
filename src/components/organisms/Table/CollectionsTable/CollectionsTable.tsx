@@ -50,7 +50,7 @@ export const CollectionsTable: FC = () => {
             </Td>
             <Td>
               <Box w="fit-content" textAlign="right">
-                <Text color="green" textStyle="text.14.bold">
+                <Text color="green.primary" textStyle="text.14.bold">
                   +18,60%
                 </Text>
                 <Text textStyle="text.14.regular" color="gray">
@@ -78,7 +78,7 @@ export const CollectionsTable: FC = () => {
             </Td>
             <Td>
               <Box w="fit-content" textAlign="right">
-                <Text color="green" textStyle="text.14.bold">
+                <Text color="green.primary" textStyle="text.14.bold">
                   +18,60%
                 </Text>
                 <Text textStyle="text.14.regular" color="gray">
@@ -106,7 +106,7 @@ export const CollectionsTable: FC = () => {
             </Td>
             <Td>
               <Box w="fit-content" textAlign="right">
-                <Text color="green" textStyle="text.14.bold">
+                <Text color="green.primary" textStyle="text.14.bold">
                   +18,60%
                 </Text>
                 <Text textStyle="text.14.regular" color="gray">

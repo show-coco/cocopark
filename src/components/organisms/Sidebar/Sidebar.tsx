@@ -21,19 +21,39 @@ export const Sidebar: FC = () => {
         Manage listings
       </Text>
       <VStack w="full">
-        <SidebarNavLink href="" isActive={true} icon={DashboardIcon}>
+        <SidebarNavLink
+          href="/manager/dashboard"
+          isActive={true}
+          icon={DashboardIcon}
+        >
           Dashboard
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={YourListingIcon}>
+        <SidebarNavLink
+          href="/manager/your-listings"
+          isActive={false}
+          icon={YourListingIcon}
+        >
           Your Listings
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={BookmarkIcon}>
+        <SidebarNavLink
+          href="/manager/favorites"
+          isActive={false}
+          icon={BookmarkIcon}
+        >
           Favorites
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={PeopleIcon}>
+        <SidebarNavLink
+          href="/manager/following"
+          isActive={false}
+          icon={PeopleIcon}
+        >
           Following
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={CreditIcon}>
+        <SidebarNavLink
+          href="/manager/payouts"
+          isActive={false}
+          icon={CreditIcon}
+        >
           Payouts
         </SidebarNavLink>
       </VStack>

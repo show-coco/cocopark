@@ -76,7 +76,7 @@ export const WalletModal: FC<Props> = ({ isOpen, onClose }) => {
                 >
                   {isConnected ? (
                     <Flex alignItems="center">
-                      <CircleIcon color="green" mr="8px" /> {name}
+                      <CircleIcon color="green.primary" mr="8px" /> {name}
                     </Flex>
                   ) : (
                     <>{name}</>

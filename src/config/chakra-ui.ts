@@ -28,7 +28,9 @@ const colors = {
   gray: {
     primary: "#5D5D5B",
   },
-  green: "#03DB80",
+  green: {
+    primary: "#03DB80",
+  },
   outline: {
     light: "#E2E9E6",
     dark: "#F8FAF9",

@@ -101,7 +101,9 @@ export const HeaderWithSearch: FC = () => {
           <Links />
           {active ? (
             <HStack ml="32px" spacing="8px">
-              <FilledButton>Create</FilledButton>
+              <Link href="/assets/new">
+                <FilledButton>Create</FilledButton>
+              </Link>
               <Link href="/manager/dashboard">
                 <a>
                   <Avatar
@@ -175,5 +177,67 @@ const MobileHeader: FC = () => {
         </DrawerContent>
       </Drawer>
     </Flex>
+  );
+};
+
+export const SimpleHeader: FC = () => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const { active, account } = useWeb3React();
+  const walletDrawer = useDisclosure();
+  const walletModal = useDisclosure();
+
+  const tried = useEagerConnect();
+  useInactiveListener(!tried);
+
+  return (
+    <>
+      {account && <WalletDrawer account={account} {...walletDrawer} />}
+      <WalletModal {...walletModal} />
+
+      <Flex
+        as="header"
+        h="84px"
+        alignItems="center"
+        px="32px"
+        justify="space-between"
+        bgColor="white"
+      >
+        <Flex flex="1 0 0" pr="60px">
+          <Link href="/">
+            <Logo w="40px" h="40px" mr="12px" cursor="pointer" />
+          </Link>
+        </Flex>
+
+        {active ? (
+          <HStack ml="32px" spacing="8px">
+            <Link href="/explore">
+              <FilledButton>Cancel</FilledButton>
+            </Link>
+            <Link href="/manager/dashboard">
+              <a>
+                <Avatar
+                  src="/Art1.png"
+                  size="sm"
+                  h="40px"
+                  w="40px"
+                  cursor="pointer"
+                />
+              </a>
+            </Link>
+            <FilledRestingIconButton
+              borderRadius="full"
+              aria-label="wallet"
+              ml="32px"
+              icon={<WalletIcon w="18px" h="18px" />}
+              onClick={walletDrawer.onOpen}
+            />
+          </HStack>
+        ) : (
+          <FilledButton ml="32px" onClick={walletModal.onOpen}>
+            Connect Wallet
+          </FilledButton>
+        )}
+      </Flex>
+    </>
   );
 };
