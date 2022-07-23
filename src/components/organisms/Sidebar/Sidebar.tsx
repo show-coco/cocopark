@@ -1,16 +1,16 @@
 import { FC } from "react";
 import { Box, Text, VStack } from "@chakra-ui/react";
-import { BookmarkIcon } from "components/atoms/Icon/BookmarkIcon";
 import { CreditIcon } from "components/atoms/Icon/CreditIcon";
 import { DashboardIcon } from "components/atoms/Icon/DashboardIcon";
-import { PeopleIcon } from "components/atoms/Icon/PeopleIcon";
-import { YourListingIcon } from "components/atoms/Icon/YourListingIcon";
 import { SidebarNavLink } from "components/atoms/Link/NavLink";
 import {
-  MdAccountCircle,
   MdDevices,
-  MdHeadphones,
-  MdNotifications,
+  MdOutlineAccountCircle,
+  MdOutlineBookmarkBorder,
+  MdOutlineHeadphones,
+  MdOutlineInbox,
+  MdOutlineNotifications,
+  MdOutlinePeople,
   MdQrCode,
 } from "react-icons/md";
 import { useRouter } from "next/router";
@@ -35,21 +35,21 @@ export const Sidebar: FC = () => {
         <SidebarNavLink
           href="/manager/your-listings"
           isActive={pathname.includes("your-listings")}
-          icon={YourListingIcon}
+          icon={MdOutlineInbox}
         >
           Your Listings
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/favorites"
           isActive={pathname.includes("favorites")}
-          icon={BookmarkIcon}
+          icon={MdOutlineBookmarkBorder}
         >
           Favorites
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/following"
           isActive={pathname.includes("following")}
-          icon={PeopleIcon}
+          icon={MdOutlinePeople}
         >
           Following
         </SidebarNavLink>
@@ -66,7 +66,7 @@ export const Sidebar: FC = () => {
         Profile settings
       </Text>
       <VStack w="full">
-        <SidebarNavLink href="" isActive={false} icon={MdAccountCircle}>
+        <SidebarNavLink href="" isActive={false} icon={MdOutlineAccountCircle}>
           Account Details
         </SidebarNavLink>
         <SidebarNavLink href="" isActive={false} icon={MdDevices}>
@@ -75,10 +75,10 @@ export const Sidebar: FC = () => {
         <SidebarNavLink href="" isActive={false} icon={MdQrCode}>
           Apps
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={MdNotifications}>
+        <SidebarNavLink href="" isActive={false} icon={MdOutlineNotifications}>
           Notifications
         </SidebarNavLink>
-        <SidebarNavLink href="" isActive={false} icon={MdHeadphones}>
+        <SidebarNavLink href="" isActive={false} icon={MdOutlineHeadphones}>
           Help Center
         </SidebarNavLink>
       </VStack>
