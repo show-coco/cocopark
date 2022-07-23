@@ -13,8 +13,12 @@ import {
   MdNotifications,
   MdQrCode,
 } from "react-icons/md";
+import { useRouter } from "next/router";
 
 export const Sidebar: FC = () => {
+  const router = useRouter();
+  const pathname = router.pathname;
+
   return (
     <Box pt="44px" w="260px">
       <Text textStyle="text.14.light" px="32px" mb="12px">
@@ -23,35 +27,35 @@ export const Sidebar: FC = () => {
       <VStack w="full">
         <SidebarNavLink
           href="/manager/dashboard"
-          isActive={true}
+          isActive={pathname.includes("dashboard")}
           icon={DashboardIcon}
         >
           Dashboard
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/your-listings"
-          isActive={false}
+          isActive={pathname.includes("your-listings")}
           icon={YourListingIcon}
         >
           Your Listings
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/favorites"
-          isActive={false}
+          isActive={pathname.includes("favorites")}
           icon={BookmarkIcon}
         >
           Favorites
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/following"
-          isActive={false}
+          isActive={pathname.includes("following")}
           icon={PeopleIcon}
         >
           Following
         </SidebarNavLink>
         <SidebarNavLink
           href="/manager/payouts"
-          isActive={false}
+          isActive={pathname.includes("payouts")}
           icon={CreditIcon}
         >
           Payouts

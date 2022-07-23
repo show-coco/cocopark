@@ -14,7 +14,7 @@ export const SidebarTemplate: FC<Props> = ({ children }) => {
       <Flex>
         <Sidebar />
 
-        <Box py="40px" px="80px">
+        <Box py="40px" px="80px" w="full">
           {children}
         </Box>
       </Flex>

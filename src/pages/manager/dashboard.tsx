@@ -1,4 +1,4 @@
-import { DashboardScreen } from "components/screens/Manager/DashboardScreen";
+import { DashboardScreen } from "components/screens/Manager/Dashboard/DashboardScreen";
 import type { NextPage } from "next";
 
 const Dashboard: NextPage = () => {
