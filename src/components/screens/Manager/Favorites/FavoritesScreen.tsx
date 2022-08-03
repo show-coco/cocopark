@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import { Pagination } from "components/molecules/Pagination/Pagination";
-import { FavoriteTable } from "components/organisms/Table/FavariteTable/FavoriteTable";
+import { FavoriteTable } from "components/organisms/Table/FavoriteTable/FavoriteTable";
 import { SidebarTemplate } from "components/templates/SidebarTemplate/SidebarTemplate";
 import { FC } from "react";
 import { NoContents } from "../parts/NoContents";
