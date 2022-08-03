@@ -23,6 +23,7 @@ export const Pagination: FC = () => {
 
           return (
             <IconButton
+              key={page}
               aria-label="page"
               rounded="full"
               variant={isCurrent ? "solid" : "ghost"}
