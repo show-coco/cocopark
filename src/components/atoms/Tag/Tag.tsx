@@ -28,7 +28,7 @@ export const FilledTag: FC<TagProps> = (props) => {
       whiteSpace="nowrap"
       {...props}
     >
-      <Text textStyle="text.12.bold">{props.children}</Text>
+      {props.children}
     </Tag>
   );
 };
@@ -45,7 +45,7 @@ export const LightTag: FC<TagProps> = (props) => {
       whiteSpace="nowrap"
       {...props}
     >
-      <Text textStyle="text.12.bold">{props.children}</Text>
+      {props.children}
     </Tag>
   );
 };
